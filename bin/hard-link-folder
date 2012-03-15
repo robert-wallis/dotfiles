@@ -41,7 +41,7 @@ link_files()
 			printf "Skipping directory ${FILE}\n"
 		else
 			# hardlink the files
-			ln "${1}${FILE}" "${2}${FILE}"
+			ln -f "${1}${FILE}" "${2}${FILE}"
 		fi
 	done
 }

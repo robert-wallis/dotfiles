@@ -1,27 +1,40 @@
 .PHONY: install
 
-install: install_dotfiles install_vimdefault install_vim_bundles
+BIN_FILES = bin/hard-link-folder
 
-install_dotfiles:
-	mkdir -p ~/bin
-	ln bin/hard-link-folder ~/bin/hard-link-folder
+VIM_SRC="${PWD}/.vim"
+VIM_DEST="${HOME}/.vim"
+VIM_BUNDLES_DEST=${VIM_DEST}"/bundles"
 
-install_vimdefault:
-	mkdir -p ~/.vim
-	mkdir -p ~/.vim/tmp ~/.vim/backup
-	hard-link-folder .vim/after/plugin/ ~/.vim/after/plugin/
-	hard-link-folder .vim/autoload/ ~/.vim/autoload/
-	hard-link-folder .vim/doc/ ~/.vim/doc/
-	hard-link-folder .vim/ftplugin/ ~/.vim/ftplugin/
-	hard-link-folder .vim/indent/ ~/.vim/indent/
-	hard-link-folder .vim/plugin/ ~/.vim/plugin/
-	hard-link-folder .vim/snippets/ ~/.vim/snippets/
-	hard-link-folder .vim/syntax/ ~/.vim/syntax/
+install : ${BIN_FILES} ${VIM_DEST} ${VIM_BUNDLES_DEST}
+	git submodule sync
 
-install_vim_bundles:
-	mkdir -p ~/.vim/bundle
-	git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script
-	git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
-	git clone https://github.com/digitaltoad/vim-jade.git ~/.vim/bundle/vim-jade
-	git clone https://github.com/wavded/vim-stylus.git ~/.vim/bundle/vim-stylus
-	if [ -d $GOROOT ]; then ln -s $GOROOT/misc/vim ~/.vim/bundle/vim-go; fi
+~/bin : ${BIN_FILES}
+	mkdir -p $@
+
+${BIN_FILES} : ${BIN_FILES}
+	ln -f bin/hard-link-folder ~/bin/hard-link-folder
+
+${VIM_DEST} :
+	@printf "\e[0;33minstalling $@\e[0m\n"
+	mkdir -p ${VIM_DEST}
+	mkdir -p ${VIM_DEST}/tmp ${VIM_DEST}/backup
+	hard-link-folder ${VIM_SRC}/after/plugin/ ${VIM_DEST}/after/plugin/
+	hard-link-folder ${VIM_SRC}/autoload/ ${VIM_DEST}/autoload/
+	hard-link-folder ${VIM_SRC}/doc/ ${VIM_DEST}/doc/
+	hard-link-folder ${VIM_SRC}/ftplugin/ ${VIM_DEST}/ftplugin/
+	hard-link-folder ${VIM_SRC}/indent/ ${VIM_DEST}/indent/
+	hard-link-folder ${VIM_SRC}/plugin/ ${VIM_DEST}/plugin/
+	hard-link-folder ${VIM_SRC}/snippets/ ${VIM_DEST}/snippets/
+	hard-link-folder ${VIM_SRC}/syntax/ ${VIM_DEST}/syntax/
+
+${VIM_BUNDLES_DEST} :
+	@printf "\e[0;33minstalling vim bundles\e[0m\n"
+	mkdir -p $@
+	@ls -1 ${VIM_SRC}/bundles | \
+		while read D; do \
+			ln -n -s ${VIM_SRC}/bundles/$$D/ $@/$$D; \
+		done
+	@if [ ! -d ${VIM_DEST}/bundles/vim-go -a -d ${GOROOT} ]; then \
+		ln -s ${GOROOT}/misc/vim/ $@/vim-go; \
+	fi
