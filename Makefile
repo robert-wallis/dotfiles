@@ -11,11 +11,8 @@ install_vimdefault:
 	mkdir -p ~/.vim/tmp ~/.vim/backup
 	hard-link-folder .vim/after/plugin/ ~/.vim/after/plugin/
 	hard-link-folder .vim/autoload/ ~/.vim/autoload/
-	hard-link-folder .vim/autoload/go/ ~/.vim/autoload/go/
 	hard-link-folder .vim/doc/ ~/.vim/doc/
-	hard-link-folder .vim/ftdetect/ ~/.vim/ftdetect/
 	hard-link-folder .vim/ftplugin/ ~/.vim/ftplugin/
-	hard-link-folder .vim/ftplugin/go/ ~/.vim/ftplugin/go/
 	hard-link-folder .vim/indent/ ~/.vim/indent/
 	hard-link-folder .vim/plugin/ ~/.vim/plugin/
 	hard-link-folder .vim/snippets/ ~/.vim/snippets/
@@ -27,3 +24,4 @@ install_vim_bundles:
 	git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 	git clone https://github.com/digitaltoad/vim-jade.git ~/.vim/bundle/vim-jade
 	git clone https://github.com/wavded/vim-stylus.git ~/.vim/bundle/vim-stylus
+	if [ -d $GOROOT ]; then ln -s $GOROOT/misc/vim ~/.vim/bundle/vim-go; fi
