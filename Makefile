@@ -4,9 +4,9 @@ BIN_FILES = bin/hard-link-folder
 
 VIM_SRC="${PWD}/.vim"
 VIM_DEST="${HOME}/.vim"
-VIM_BUNDLES_DEST=${VIM_DEST}"/bundles"
+VIM_BUNDLE_DEST=${VIM_DEST}"/bundle"
 
-install : ${BIN_FILES} ${VIM_DEST} ${VIM_BUNDLES_DEST}
+install : ${BIN_FILES} ${VIM_DEST} ${VIM_BUNDLE_DEST}
 	git submodule sync
 
 ~/bin : ${BIN_FILES}
@@ -28,13 +28,13 @@ ${VIM_DEST} :
 	hard-link-folder ${VIM_SRC}/snippets/ ${VIM_DEST}/snippets/
 	hard-link-folder ${VIM_SRC}/syntax/ ${VIM_DEST}/syntax/
 
-${VIM_BUNDLES_DEST} :
-	@printf "\e[0;33minstalling vim bundles\e[0m\n"
+${VIM_BUNDLE_DEST} :
+	@printf "\e[0;33minstalling vim bundle\e[0m\n"
 	mkdir -p $@
-	@ls -1 ${VIM_SRC}/bundles | \
+	@ls -1 ${VIM_SRC}/bundle | \
 		while read D; do \
-			ln -n -s ${VIM_SRC}/bundles/$$D/ $@/$$D; \
+			ln -n -s ${VIM_SRC}/bundle/$$D/ $@/$$D; \
 		done
-	@if [ ! -d ${VIM_DEST}/bundles/vim-go -a -d ${GOROOT} ]; then \
+	@if [ ! -d ${VIM_DEST}/bundle/vim-go -a -d ${GOROOT} ]; then \
 		ln -s ${GOROOT}/misc/vim/ $@/vim-go; \
 	fi
