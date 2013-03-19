@@ -1,3 +1,5 @@
+[submodule ".vim/bundle/ctrlp.vim"] path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/snipmate-nodejs"]
 	path = .vim/bundle/snipmate-nodejs
 	url = https://github.com/jamescarr/snipmate-nodejs.git
@@ -10,12 +12,18 @@
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "vim-stylus"]
-	path = vim-stylus
-	url = https://github.com/wavded/vim-stylus.git
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-nginx"]
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/jinfield/vim-nginx.git
+[submodule ".vim/bundle/vim-puppet"]
+	path = .vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
