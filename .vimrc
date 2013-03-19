@@ -3,6 +3,7 @@ set background=dark
 syntax on
 set ignorecase
 set smartcase
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
