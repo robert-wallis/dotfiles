@@ -1,5 +1,6 @@
 call pathogen#infect()
 set background=dark
+colors peachpuff
 syntax on
 set ignorecase
 set smartcase
