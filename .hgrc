@@ -1,0 +1,14 @@
+[extensions]
+color =
+
+[ui]
+username = Robert Wallis <robert.wallis@ieee.org>
+
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
+[diff]
+ignorews = True
+ignorewsamount = True
+ignoreblanklines = True
+
