@@ -1,6 +1,6 @@
 call pathogen#infect()
 set background=dark
-colors peachpuff
+colors evening
 syntax on
 set ignorecase
 set smartcase
@@ -18,8 +18,6 @@ set laststatus=2
 set directory=~/.vim/tmp
 set backupdir=~/.vim/backup
 
-map <F6>	:w<CR>:!php -l %<CR>
-map <D-]>	:tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-j>	:tabprev<CR>
 map <C-k>	:tabnext<CR>
 imap <C-j>	<ESC>:tabprev<CR>
