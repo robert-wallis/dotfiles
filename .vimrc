@@ -1,6 +1,6 @@
 call pathogen#infect()
 set background=dark
-colors evening
+colors slate
 syntax on
 set ignorecase
 set smartcase
