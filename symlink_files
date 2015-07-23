@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cp -i `pwd`/.gitconfig ~/.gitconfig
+ln -isv `pwd`/.gvimrc ~/.gvimrc
+ln -isv `pwd`/.hgrc ~/.hgrc
+if [ ! -s ~/.vimrc ]
+then
+	# this is in an if because if you install twice it will put .vim inside of .vim
+	ln -isv `pwd`/.vim ~/.vim
+fi
+ln -isv `pwd`/.vimrc ~/.vimrc
+
