@@ -3,5 +3,6 @@ I use this as a central repo to keep my environments synced.  But mostly vim.
 
 # Installation
 ```bash
-$ ./symlink_files
+git clone git@github.com:robert-wallis/dotfiles.git
+dotfiles/symlink_files
 ```
