@@ -1,1 +1,0 @@
-/Users/robert/Projects/open-source/go/misc/vim/plugin/godoc.vim
