@@ -1,6 +1,8 @@
 call pathogen#infect()
 set background=dark
-colors slate
+
+let g:alduin_Shout_Windhelm = 1
+colors alduin
 
 syntax on
 set ignorecase
