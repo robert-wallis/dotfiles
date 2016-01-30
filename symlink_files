@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -i `pwd`/.gitconfig ~/.gitconfig
+ln -isv `pwd`/.gitconfig ~/.gitconfig
 ln -isv `pwd`/.gvimrc ~/.gvimrc
 ln -isv `pwd`/.hgrc ~/.hgrc
 if [ ! -s ~/.vimrc ]

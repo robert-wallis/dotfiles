@@ -3,3 +3,11 @@
 	email = smilingrob@gmail.com
 [push]
 	default = simple
+
+[diff "jpg"]
+	textconf = exif
+	cachetextconf = true
+
+[diff "png"]
+	textconf = exif
+	cachetextconf = true
