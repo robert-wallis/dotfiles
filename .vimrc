@@ -33,3 +33,6 @@ imap <C-k>	<ESC>:tabnext<CR>
 
 filetype plugin on
 filetype indent on
+
+set exrc
+set secure
