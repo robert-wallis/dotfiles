@@ -1,14 +1,16 @@
 #!/bin/bash
 
-HERE=$(dirname ${BASH_SOURCE[0]})
+THIS_FILENAME=$(readlink -f ${BASH_SOURCE[0]})
+HERE=$(dirname $THIS_FILENAME)
 
 cp -i $HERE/.gitconfig ~/.gitconfig
 ln -isv $HERE/.gvimrc ~/.gvimrc
 ln -isv $HERE/.hgrc ~/.hgrc
-if [ ! -s ~/.vimrc ]
-then
-	# this is in an if because if you install twice it will put .vim inside of .vim
+# this is in an if because if you install twice it will put .vim inside of .vim
+if [ ! -s ~/.vim ]; then
 	ln -isv $HERE/.vim ~/.vim
 fi
-ln -isv $HERE/.vimrc ~/.vimrc
+if [ ! -s ~/.vimrc ]; then
+	ln -isv $HERE/.vimrc ~/.vimrc
+fi
 
