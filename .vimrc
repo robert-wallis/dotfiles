@@ -9,7 +9,7 @@ set secure
 
 set background=dark " Show the dark version of the colors.
 let g:alduin_Shout_Windhelm = 1 " Make the reds brighter in `colors alduin`.
-colors default
+colors alduin
 
 syntax on
 set ignorecase
