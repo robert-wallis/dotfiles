@@ -2,10 +2,7 @@
 color =
 
 [ui]
-username = Robert Wallis <robert.wallis@ieee.org>
-
-[web]
-cacerts = /etc/hg-dummy-cert.pem
+username = Robert Wallis <smilingrob@gmail.com>
 
 [diff]
 ignorews = True
