@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/Dockerfile.vim"]
 	path = .vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "ego.vim-colors"]
+	path = .vim/bundle/ego.vim-colors
+	url = https://github.com/geetarista/ego.vim.git
