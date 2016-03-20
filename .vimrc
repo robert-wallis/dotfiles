@@ -7,9 +7,8 @@ filetype indent on
 set exrc
 set secure
 
+colors ego
 set background=dark " Show the dark version of the colors.
-let g:alduin_Shout_Windhelm = 1 " Make the reds brighter in `colors alduin`.
-colors alduin
 
 syntax on
 set ignorecase
