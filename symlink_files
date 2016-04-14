@@ -1,16 +1,17 @@
 #!/bin/bash
 
-THIS_FILENAME=$(readlink -f ${BASH_SOURCE[0]})
-HERE=$(dirname $THIS_FILENAME)
+set -e
 
-cp -i $HERE/.gitconfig ~/.gitconfig
-ln -isv $HERE/.gvimrc ~/.gvimrc
-ln -isv $HERE/.hgrc ~/.hgrc
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+cp -i $DOTFILES/.gitconfig ~/.gitconfig
+ln -isv $DOTFILES/.gvimrc ~/.gvimrc
+ln -isv $DOTFILES/.hgrc ~/.hgrc
 # this is in an if because if you install twice it will put .vim inside of .vim
 if [ ! -s ~/.vim ]; then
-	ln -isv $HERE/.vim ~/.vim
+	ln -isv $DOTFILES/.vim ~/.vim
 fi
 if [ ! -s ~/.vimrc ]; then
-	ln -isv $HERE/.vimrc ~/.vimrc
+	ln -isv $DOTFILES/.vimrc ~/.vimrc
 fi
 
