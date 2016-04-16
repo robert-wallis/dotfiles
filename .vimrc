@@ -16,7 +16,7 @@ set smartcase
 set hlsearch " Highlight the words for which you just searched.
 
 set spell spelllang=en_us
-" set nospell
+set nospell
 
 " Use sane tab settings.
 set noexpandtab		" Tabs exist to let people change the width. Spaces force a style.
