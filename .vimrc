@@ -7,7 +7,7 @@ filetype indent on
 set exrc
 set secure
 
-colors ego
+colors elflord
 set background=dark " Show the dark version of the colors.
 
 syntax on
