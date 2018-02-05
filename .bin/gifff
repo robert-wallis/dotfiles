@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -f "$1" ]; then
+	echo "Usage: gifff filename.mov"
+	exit 1
+fi
+echo "Making gif"
+set -i
+
+ffmpeg -v warning -i "$1" -vf fps=10 "$1.gif"
