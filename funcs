@@ -1,6 +1,14 @@
 #!/bin/bash
 
-killport() {
+function dotenv () {
+  export $(cat .env)
+}
+
+function trcut() {
+	tr -s ' ' | cut -d ' ' "$@"
+}
+
+function killport() {
     port=${@:$#}
     if [ -z "$port" ]; then
         echo "usage: killport [args for kill] <tcp port>"
@@ -17,3 +25,4 @@ killport() {
     args=${@:1:$#-1}
     kill $args $pid
 }
+
