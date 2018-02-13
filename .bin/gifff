@@ -8,4 +8,4 @@ set -i
 
 # better options here
 # http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
-ffmpeg -v warning -i "$1" -vf fps=10 "$1.gif"
+ffmpeg -v warning -i "$1" -vf fps=10,scale=300:-1 "$1.gif"
