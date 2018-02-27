@@ -16,7 +16,6 @@ API_URL='https://api.pwnedpasswords.com'
 def main():
     password = getpass().strip().encode('utf-8')
     hash = hashlib.sha1(password).hexdigest()
-    print(hash)
     del password
     req = requests.get(API_URL + '/range/' + hash[0:5])
     results = req.text.split('\r\n')
