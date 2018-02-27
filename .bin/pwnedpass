@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""
+Copyright (C) 2018 Robert A. Wallis, All Rights Reserved.
+
+Uses Troy Hunt's password database to check for hacked passwords.
+Does NOT send the password to any third party.  It hashes the password, sends the first 5, and then searches through the results of pwned with the first 5 hash.
+
+"""
+
+import requests
+import hashlib
+from getpass import getpass
+
+API_URL='https://api.pwnedpasswords.com'
+
+def main():
+    password = getpass().strip().encode('utf-8')
+    hash = hashlib.sha1(password).hexdigest()
+    print(hash)
+    del password
+    req = requests.get(API_URL + '/range/' + hash[0:5])
+    results = req.text.split('\r\n')
+    hash_end = hash[5:].upper()
+    print ([(hash, r.split(':')[1]) for r in results if hash_end in r])
+
+if __name__ == '__main__':
+    main()
+
