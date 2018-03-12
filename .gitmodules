@@ -49,3 +49,6 @@
 [submodule "ego.vim-colors"]
 	path = .vim/bundle/ego.vim-colors
 	url = https://github.com/geetarista/ego.vim.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
