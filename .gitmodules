@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/elm.vim"]
 	path = .vim/bundle/elm.vim
 	url = https://github.com/lambdatoast/elm.vim.git
+[submodule ".vim/bundle/haskell-vim"]
+	path = .vim/bundle/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim.git
