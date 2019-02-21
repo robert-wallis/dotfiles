@@ -45,3 +45,11 @@ imap <C-k>	<ESC>:tabnext<CR>
 " Tell netrw to show tree view by default, P.S. press `i` to loop through other views.
 let g:netrw_liststyle=3
 
+if executable('rls')
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'rls',
+		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+		\ 'whitelist': ['rust'],
+		\ })
+endif
+
