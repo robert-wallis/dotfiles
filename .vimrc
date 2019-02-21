@@ -7,11 +7,12 @@ filetype indent on
 set exrc
 set secure
 
-colors elflord
 set background=dark " Show the dark version of the colors.
+colors elflord
+
+set mouse=a " Mouse support in Terminal.app
 
 syntax on
-set ignorecase
 set smartcase
 set hlsearch " Highlight the words for which you just searched.
 
