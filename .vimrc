@@ -44,6 +44,9 @@ imap <C-k>	<ESC>:tabnext<CR>
 
 " Tell netrw to show tree view by default, P.S. press `i` to loop through other views.
 let g:netrw_liststyle=3
+let g:netrw_browse_split=2
+" netrw by default leaves unmodified buffers open preventing :q
+autocmd FileType netrw setl bufhidden=delete
 
 if executable('rls')
 	au User lsp_setup call lsp#register_server({
