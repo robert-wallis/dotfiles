@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 cp -i $DOTFILES/.gitconfig ~/.gitconfig
@@ -14,4 +12,6 @@ fi
 if [ ! -s ~/.vimrc ]; then
 	ln -isv $DOTFILES/.vimrc ~/.vimrc
 fi
-
+if [ ! -s ~/.bin ]; then
+	ln -isv $DOTFILES/.bin ~/.bin
+fi
