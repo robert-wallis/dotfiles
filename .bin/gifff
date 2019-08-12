@@ -1,11 +1,30 @@
 #!/bin/bash
-if [ ! -f "$1" ]; then
-	echo "Usage: gifff filename.mov"
+if [[ -f "$2" ]]; then
+	read -p "Overwrite $2? (y/N) " overwrite
+	if [[ "$overwrite" = "y" ]]; then
+		rm $2
+	else
+		echo canceled
+		exit 1
+	fi
+fi
+if [[ ! -f "$1" ]] || [[ -f "$2" ]]; then
+	echo "Usage: gifff filename.mov filename.gif"
 	exit 1
 fi
 echo "Making gif"
-set -i
+set -i -e
 
 # better options here
 # http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
-ffmpeg -v warning -i "$1" -vf fps=10,scale=400:-1 "$1.gif"
+palette="/tmp/palette.png"
+filters="fps=10,scale=400:-1"
+in_file="$1"
+out_file="$2"
+
+ffmpeg -v warning -i "$in_file" -vf "$filters,palettegen" -y $palette
+#ffmpeg -v warning -i "$in_file" -vf $filters "$out_file"
+
+set +e # turn off errors, so we can delete the palette
+ffmpeg -v warning -i "$in_file" -i "$palette" -lavfi "$filters [x]; [x][1:v] paletteuse" -y "$out_file"
+rm $palette
