@@ -2,16 +2,20 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-cp -i $DOTFILES/.gitconfig ~/.gitconfig
-ln -isv $DOTFILES/.gvimrc ~/.gvimrc
-ln -isv $DOTFILES/.hgrc ~/.hgrc
+cp -i $DOTFILES/.gitconfig $HOME/.gitconfig
+ln -isv $DOTFILES/.gvimrc $HOME/.gvimrc
+ln -isv $DOTFILES/.hgrc $HOME/.hgrc
 # this is in an if because if you install twice it will put .vim inside of .vim
-if [ ! -s ~/.vim ]; then
-	ln -isv $DOTFILES/.vim ~/.vim
+if [ ! -s $HOME/.vim ]; then
+	ln -isv $DOTFILES/.vim $HOME/.vim
 fi
-if [ ! -s ~/.vimrc ]; then
-	ln -isv $DOTFILES/.vimrc ~/.vimrc
+if [ ! -s $HOME/.vimrc ]; then
+	ln -isv $DOTFILES/.vimrc $HOME/.vimrc
 fi
-if [ ! -s ~/.bin ]; then
-	ln -isv $DOTFILES/.bin ~/.bin
+if [ ! -s $HOME/.bin ]; then
+	ln -isv $DOTFILES/.bin $HOME/.bin
+fi
+if [ ! -s $HOME/.config/git/ignore ]; then
+	mkdir -p $HOME/.config/git
+	ln -isv $DOTFILES/gitignore $HOME/.config/git/ignore
 fi
