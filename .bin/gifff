@@ -18,7 +18,7 @@ set -i -e
 # better options here
 # http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 palette="/tmp/palette.png"
-filters="fps=10,scale=400:-1"
+filters="fps=10,scale=400:-1:flags=lanczos"
 in_file="$1"
 out_file="$2"
 
@@ -27,4 +27,5 @@ ffmpeg -v warning -i "$in_file" -vf "$filters,palettegen" -y $palette
 
 set +e # turn off errors, so we can delete the palette
 ffmpeg -v warning -i "$in_file" -i "$palette" -lavfi "$filters [x]; [x][1:v] paletteuse" -y "$out_file"
+
 rm $palette
