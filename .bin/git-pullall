@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 for d in `ls`; do
 	if [[ -d $d && -d "$d/.git" ]]; then
 		pushd $d
