@@ -19,6 +19,10 @@ set hlsearch " Highlight the words for which you just searched.
 set spell spelllang=en_us
 set nospell
 
+" show whitespaces
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
+set list
+
 " Use sane tab settings.
 set noexpandtab		" Tabs exist to let people change the width. Spaces force a style.
 set tabstop=4		" 4 is a language-agnostic standard.
