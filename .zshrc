@@ -20,3 +20,7 @@ export PATH="$PATH:$HOME/.fastlane/bin"
 
 # SDL
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+
+for cfg in $(ls .zshrc_*); do
+    [ -r $cfg ] && source $cfg
+done
