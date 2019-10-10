@@ -7,9 +7,12 @@ ln -isv $DOTFILES/.zshrc $HOME/.zshrc
 ln -isv $DOTFILES/.vimrc $HOME/.vimrc
 ln -isv $DOTFILES/.gvimrc $HOME/.gvimrc
 ln -isv $DOTFILES/.hgrc $HOME/.hgrc
-# this is in an if because if you install twice it will put .vim inside of .vim
 if [ ! -s $HOME/.vim ]; then
+	# this is in an if because if you install twice it will put .vim inside of .vim
 	ln -isv $DOTFILES/.vim $HOME/.vim
+fi
+if [ ! -s $HOME/.zshrc.d ]; then
+	ln -isv $DOTFILES/.zshrc.d $HOME/.zshrc.d
 fi
 if [ ! -s $HOME/.bin ]; then
 	ln -isv $DOTFILES/.bin $HOME/.bin

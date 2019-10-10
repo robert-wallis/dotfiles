@@ -7,7 +7,7 @@ export GREP_OPTIONS="--color=auto"
 # SDL
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 
-for cfg in $(ls .zshrc_*); do
+for cfg in $(ls $HOME/.zshrc.d/*); do
     echo $cfg
     [ -r $cfg ] && source $cfg
 done
