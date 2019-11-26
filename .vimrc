@@ -21,7 +21,6 @@ set nospell
 
 " show whitespaces
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
-set list
 
 " Use sane tab settings.
 set noexpandtab		" Tabs exist to let people change the width. Spaces force a style.
