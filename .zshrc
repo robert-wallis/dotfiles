@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.bin:$HOME/.local/bin"
 export CLICOLOR=1
 export GREP_OPTIONS="--color=auto"
 export CDPATH="$HOME/Dev"
+export PROMPT='%~ %# '
 
 # SDL
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
