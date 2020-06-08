@@ -4,3 +4,7 @@ if [ -d $GEM_HOME ]; then
     export PATH="$PATH:$GEM_HOME/bin"
     printf "RUBY GEM_HOME       $GEM_HOME\n"
 fi
+# rbenv
+if which rbenv > /dev/null; then
+	eval "$(rbenv init -)"
+fi
