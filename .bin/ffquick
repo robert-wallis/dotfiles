@@ -1,11 +1,14 @@
 #!/bin/bash
 
+set -e
+
 if [[ ! -f "$1" ]]; then
 	echo "Usage: ffquick filename.mov"
 	exit 1
 fi
 outfile="$(basename "$1" .mov).mp4"
 
+
 # -an	remove audio
 # -i 	input
-ffmpeg -an -i "$1" $outfile 
+ffmpeg -an -i "$1" "$outfile" 
