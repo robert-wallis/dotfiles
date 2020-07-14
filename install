@@ -7,6 +7,7 @@ ln -isv $DOTFILES/.zshrc $HOME/.zshrc
 ln -isv $DOTFILES/.vimrc $HOME/.vimrc
 ln -isv $DOTFILES/.gvimrc $HOME/.gvimrc
 ln -isv $DOTFILES/.hgrc $HOME/.hgrc
+ln -isv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 if [ ! -s $HOME/.vim ]; then
 	# this is in an if because if you install twice it will put .vim inside of .vim
 	ln -isv $DOTFILES/.vim $HOME/.vim
