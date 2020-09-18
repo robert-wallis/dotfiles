@@ -2,7 +2,7 @@
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then 
     . "$HOME/google-cloud-sdk/path.zsh.inc"; 
-    printf "GCP                 $HOME/google-cloud-sdk\n"
+    printf "gcloud              $HOME/google-cloud-sdk\n"
 fi
 
 # The next line enables shell command completion for gcloud.

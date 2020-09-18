@@ -2,5 +2,5 @@
 GOPATH="$HOME/Dev/go"
 if [ -d $GOPATH ]; then
     export GOPATH="$GOPATH"
-    printf "GO_PATH             $GOPATH\n"
+    printf "go GO_PATH          $GOPATH\n"
 fi
