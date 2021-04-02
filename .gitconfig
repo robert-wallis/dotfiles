@@ -1,5 +1,6 @@
 [core]
-	autocrlf = true
+	# Enable this on Windows only, otherwise it messes up things like vim bundles
+	#autocrlf = true
 	editor = vim
 [user]
 	name = Robert Wallis
