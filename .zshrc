@@ -3,8 +3,8 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.bin:$HOME/.local/bin"
 export CLICOLOR=1
 export GREP_OPTIONS="--color=auto"
-#export CDPATH="$HOME/Dev"
-export PROMPT='%~ %# '
+NEWLINE=$'\n'
+export PROMPT="%(?..⏎ %F{red}%?%f${NEWLINE})%m:%F{yellow}%2~%f %# "
 
 # SDL
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
