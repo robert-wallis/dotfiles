@@ -6,3 +6,5 @@
 	name = Robert Wallis
 [push]
 	default = simple
+[pull]
+	ff = only
