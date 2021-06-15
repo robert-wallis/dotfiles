@@ -1,5 +1,5 @@
 " initialize pathogen to get all the plugins working
-call pathogen#infect()
+execute pathogen#infect()
 filetype plugin on
 filetype indent on
 
@@ -36,8 +36,17 @@ set directory=/dev/null
 set backupdir=/dev/null
 
 " filename encoding filetype      [dec, hex] location% line/maxlines,col
-set statusline=%F%m%r%h%w\ %{&ff}\ %Y\ %=[\%03.3b,\ 0x\%02.2B]\ %p%%\ %l/%L,%v
+set statusline=%F%m%r%h%w
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=\ %{&ff}\ %Y\ %=[\%03.3b,\ 0x\%02.2B]\ %p%%\ %l/%L,%v
 set laststatus=2
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Easier tab switching in insert mode.
 map <C-j>	:tabprev<CR>
