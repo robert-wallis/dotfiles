@@ -1,0 +1,49 @@
+/* Default Style Sheet:
+   By Robert Wallis 2021-06-28
+   A replacement for #00F and Times New Roman on unformatted HTML like GNU manuals.
+   Also system color scheme aware.
+ */
+
+html {
+    font-family: -apple-system-body, -apple-system, Roboto, Ubuntu, Arial;
+}
+
+@media (prefers-color-scheme: light) {
+    html {
+        background: #EEE;
+        color: #222;
+    }
+    strong, b, i, h1, h2, h3, h4, h5, h6, cite, quote {
+        color: #000;
+    }
+    a {
+        color: #5086c9;
+    }
+    a:visited {
+        color: #c89423;
+    }
+    a:hover {
+        color: #36add5;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background: #222;
+        color: #EEE;
+    }
+    strong, b, i, h1, h2, h3, h4, h5, h6, cite, quote {
+        color: #FFF;
+    }
+    a {
+        color: #6AF;
+    }
+    a:visited {
+        color: #d67d38;
+    }
+    a:hover {
+        color: #BEF;
+    }
+}
+
+
