@@ -4,10 +4,16 @@
    Also system color scheme aware.
  */
 
+/* media queries have higher specificity, so choosing dark by default */
 html {
     font-family: -apple-system-body, -apple-system, Roboto, Ubuntu, Arial;
+	background: #222;
+	color: #EEE;
 }
+a { color: #6AF; }
+a:visited { color: #d67d38; }
 
+/*
 @media (prefers-color-scheme: light) {
     html {
         background: #EEE;
@@ -45,5 +51,7 @@ html {
         color: #BEF;
     }
 }
+*/
+
 
 
