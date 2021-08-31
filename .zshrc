@@ -11,5 +11,5 @@ done
 autoload -Uz compinit && compinit
 
 newline=$'\n'
-PROMPT="%(?..🚪 %F{red}%?%f${newline})%m:%F{yellow}%2~%f \$vcs_info_msg_1_%# "
+PROMPT="%(?..⏎ %F{red}%?%f${newline})%m:%F{yellow}%2~%f \$vcs_info_msg_1_%# "
 RPROMPT=\$vcs_info_msg_0_
