@@ -18,5 +18,6 @@ if [[ -z "$outfile" ]]; then
 	fi
 fi
 
-ffmpeg -i "$infile" -vf scale=-1:720,fps=30 -c:v libx264 -crf 23 -preset slower "$outfile"
-
+# -an	remove audio
+# -i 	input
+ffmpeg -an -i "$1" "$outfile" 

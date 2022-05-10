@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 infile=$1
 outfile=$2
 
