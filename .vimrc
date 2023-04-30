@@ -14,7 +14,7 @@ set mouse=a " Mouse support in Terminal.app
 
 syntax on
 set smartcase
-set hlsearch " Highlight the words for which you just searched.
+set incsearch " Highlight the words for which you just searched.
 
 set spell spelllang=en_us
 set nospell
