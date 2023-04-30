@@ -1,3 +1,6 @@
+set encoding=utf-8
+set updatetime=300
+
 " initialize pathogen to get all the plugins working
 execute pathogen#infect()
 filetype plugin on
@@ -8,7 +11,8 @@ set exrc
 set secure
 
 set background=dark " Show the dark version of the colors.
-colors elflord
+# colors elflord
+colors ego
 
 set mouse=a " Mouse support in Terminal.app
 
@@ -30,10 +34,13 @@ set autoindent 		" Remember `:paste` `:nopaste` toggles indenting off or on resp
 
 " I don't like a copy of my files lying around.
 set noswapfile
-set nowritebackup
 set nobackup
+set nowritebackup
 set directory=/dev/null
 set backupdir=/dev/null
+
+" keep text from shifting left and right depnding on if a warning is there
+set signcolumn=yes
 
 " filename encoding filetype      [dec, hex] location% line/maxlines,col
 set statusline=%F%m%r%h%w
