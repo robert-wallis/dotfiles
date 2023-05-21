@@ -5,7 +5,7 @@
 	path = .vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
+	path = .vim/pack/colors/start/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/vim-stylus"]
 	path = .vim/bundle/vim-stylus
@@ -14,44 +14,41 @@
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/jinfield/vim-nginx.git
 [submodule ".vim/bundle/vim-csharp"]
-	path = .vim/bundle/vim-csharp
+	path = .vim/pack/syntax/start/csharp
 	url = https://github.com/OrangeT/vim-csharp
-[submodule ".vim/bundle/tlib_vim"]
-	path = .vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
 [submodule ".vim/bundle/glsl.vim"]
-	path = .vim/bundle/glsl.vim
+	path = .vim/pack/syntax/start/glsl.vim
 	url = https://github.com/vim-scripts/glsl.vim.git
 [submodule ".vim/bundle/Dockerfile.vim"]
-	path = .vim/bundle/Dockerfile.vim
+	path = .vim/pack/syntax/start/Dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "ego.vim-colors"]
-	path = .vim/bundle/ego.vim-colors
+	path = .vim/pack/colors/start/ego.vim
 	url = https://github.com/geetarista/ego.vim.git
 [submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+	path = .vim/pack/plugins/start/airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
+[submodule ".vim/pack/plugins/ctrlp"]
+	path = .vim/pack/plugins/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule ".vim/bundle/elm.vim"]
 	path = .vim/bundle/elm.vim
 	url = https://github.com/lambdatoast/elm.vim.git
 [submodule ".vim/bundle/haskell-vim"]
-	path = .vim/bundle/haskell-vim
+	path = .vim/pack/syntax/start/haskell.vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
 [submodule ".vim/bundle/rust.vim"]
-	path = .vim/bundle/rust.vim
+	path = .vim/pack/syntax/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
 [submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+	path = .vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/toml"]
-	path = .vim/bundle/toml
+	path = .vim/pack/syntax/start/toml
 	url = https://github.com/cespare/vim-toml.git
 [submodule ".vim/bundle/swift.vim"]
-	path = .vim/bundle/swift.vim
+	path = .vim/pack/syntax/start/swift
 	url = https://github.com/keith/swift.vim
 [submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
+	path = .vim/pack/syntax/start/markdown
 	url = https://github.com/plasticboy/vim-markdown.git

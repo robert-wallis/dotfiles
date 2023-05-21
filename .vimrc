@@ -1,18 +1,11 @@
 set encoding=utf-8
 set updatetime=300
 
-" initialize pathogen to get all the plugins working
-execute pathogen#infect()
 filetype plugin on
-filetype indent on
-
-" Allow .vimrc files in the project folder for project-specific spacing, and `#include` folders.
-set exrc
-set secure
 
 set background=dark " Show the dark version of the colors.
-# colors elflord
 colors ego
+" colors elflord
 
 set mouse=a " Mouse support in Terminal.app
 
@@ -27,6 +20,7 @@ set nospell
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
 
 " Use sane tab settings.
+filetype indent on
 set noexpandtab		" Tabs exist to let people change the width. Spaces force a style.
 set tabstop=4		" 4 is a language-agnostic standard.
 set shiftwidth=4	" If expandtab is turned on, 4 is a language-agnostic standard.
@@ -45,7 +39,6 @@ set signcolumn=yes
 " filename encoding filetype      [dec, hex] location% line/maxlines,col
 set statusline=%F%m%r%h%w
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=\ %{&ff}\ %Y\ %=[\%03.3b,\ 0x\%02.2B]\ %p%%\ %l/%L,%v
 set laststatus=2

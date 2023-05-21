@@ -1,1 +1,0 @@
-ego.vim-colors/colors/ego.vim
