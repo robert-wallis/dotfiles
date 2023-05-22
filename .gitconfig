@@ -4,6 +4,10 @@
 	editor = vim
 [user]
 	name = Robert Wallis
+	email = smilingrob@gmail.com
+	signingkey = ~/.ssh/id_rsa.pub
+[gpg]
+	format = ssh
 [push]
 	default = simple
 [pull]
