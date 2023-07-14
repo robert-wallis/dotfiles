@@ -16,6 +16,8 @@ set incsearch " Highlight the words for which you just searched.
 set spell spelllang=en_us
 set nospell
 
+set nofoldenable " I never remember the fold keys
+
 " show whitespaces
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
 
