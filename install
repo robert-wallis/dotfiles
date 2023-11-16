@@ -12,6 +12,10 @@ if [ ! -s $HOME/.vim ]; then
 	# this is in an if because if you install twice it will put .vim inside of .vim
 	ln -isv $DOTFILES/.vim $HOME/.vim
 fi
+if [ ! -s $HOME/.config/nvim ]; then
+	mkdir $HOME/.config
+	ln -isv "$DOTFILES/nvim" "$HOME/.config/nvim"
+fi
 if [ ! -s $HOME/.zshrc.d ]; then
 	ln -isv $DOTFILES/.zshrc.d $HOME/.zshrc.d
 fi

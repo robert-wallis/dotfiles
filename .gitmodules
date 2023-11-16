@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/pack/syntax/start/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "nvim/pack/lazy/start/lazy.nvim"]
+	path = nvim/pack/lazy/start/lazy.nvim
+	url = https://github.com/folke/lazy.nvim.git
