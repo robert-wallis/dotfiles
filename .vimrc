@@ -4,8 +4,8 @@ set updatetime=300
 filetype plugin on
 
 set background=dark " Show the dark version of the colors.
-colors ego
-" colors elflord
+" colors ego
+colors elflord
 
 set mouse=a " Mouse support in Terminal.app
 
