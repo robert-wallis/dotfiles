@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+set -e
+
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}")/../ && pwd)
+
+git clone --recurse-submodules $DOTFILES ~/dotfiles
+cd ~/dotfiles
+./install
