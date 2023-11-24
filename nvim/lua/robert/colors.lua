@@ -2,6 +2,7 @@ require("rose-pine").setup({
 	variant = 'moon',
 })
 
+vim.cmd("set termguicolors")
 vim.cmd("colorscheme rose-pine")
 
 function ColorBackground(color)
