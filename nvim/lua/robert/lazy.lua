@@ -5,8 +5,6 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{ 'rose-pine/neovim', name = 'rose-pine' }, -- color scheme
-	{ 'altercation/vim-colors-solarized', name = 'solarized' }, -- color scheme
-	{ 'geetarista/ego.vim', name = 'ego' },
 	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x',
 		dependencies = {
 			'neovim/nvim-lspconfig',

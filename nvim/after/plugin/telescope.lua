@@ -6,5 +6,5 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fG', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fs', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end) -- from Primeagen
+	builtin.grep_string({ search = vim.fn.input("Grep > ") }); -- from Primeagen
+end)

@@ -12,7 +12,7 @@ require("mason-lspconfig").setup {
 		"gopls",
 		"jedi_language_server",
 		"lua_ls",
-		"pyright",
+		"pylyzer",
 		"rust_analyzer",
 		"tsserver",
 		"volar",
@@ -22,4 +22,3 @@ require("mason-lspconfig").setup {
 		lsp_zero.default_setup,
 	},
 }
-
