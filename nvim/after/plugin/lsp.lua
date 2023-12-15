@@ -8,17 +8,20 @@ end)
 require("mason").setup({})
 require("mason-lspconfig").setup {
 	ensure_installed = {
-		"eslint",
-		"gopls",
-		"jedi_language_server",
+		"eslint", -- javascript
+		"gopls", -- go
+		"jedi_language_server", -- python
 		"lua_ls",
-		"pylyzer",
 		"rust_analyzer",
-		"tsserver",
-		"volar",
+		"tsserver", -- typescript
+		"volar", -- vue
+		"yamlls",
 	},
+	-- See `:h mason-lspconfig.setup_handlers()`
+	-- @type table<string, fun(server_name: string)>?
 	handlers = {
 		-- important to have handlers, or lspconfig won't set up correctly
 		lsp_zero.default_setup,
+
 	},
 }
