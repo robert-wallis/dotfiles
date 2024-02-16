@@ -16,3 +16,8 @@ if [ -d "$OBSIDIAN_HOME" ]; then
 	alias obsidian="cd \"$OBSIDIAN_HOME\""
 fi
 
+GDRIVE_HOME="$HOME/Library/CloudStorage/GoogleDrive-smilingrob@gmail.com/My\ Drive/"
+if [ -d "$GDRIVE_HOME" ]; then
+	printf "\tgdrive\t cd \"$GDRIVE_HOME\n"
+	alias gdrive="cd \"$GDRIVE_HOME\""
+fi
