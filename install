@@ -16,8 +16,8 @@ fi
 if [ ! -s $HOME/.zshrc.d ]; then
 	ln -isv $DOTFILES/.zshrc.d $HOME/.zshrc.d
 fi
-if [ ! -s $HOME/.bin ]; then
-	ln -isv $DOTFILES/.bin $HOME/.bin
+if [ ! -s $HOME/bin ]; then
+	ln -isv $DOTFILES/bin $HOME/bin
 fi
 if [ ! -s $HOME/.config/git/ignore ]; then
 	mkdir -p $HOME/.config/git

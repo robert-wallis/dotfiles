@@ -1,6 +1,5 @@
 # base
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export CLICOLOR=1
 export GPG_TTY=$(tty)
 
