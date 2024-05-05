@@ -1,11 +1,11 @@
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then 
-    . "$HOME/google-cloud-sdk/path.zsh.inc"; 
-    printf "gcloud              $HOME/google-cloud-sdk\n"
+gcloud_p="google-cloud-sdk/path.zsh.inc"
+if [ -f "$HOME/$gcloud_p" ]; then 
+    printf " \e[33m. gcloud\e[0m"
+    . "$HOME/$gcloud_p"; 
 fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then 
-    . "$HOME/google-cloud-sdk/completion.zsh.inc"; 
+gcloud_comp_p="google-cloud-sdk/completion.zsh.inc"
+if [ -f "$HOME/$gcloud_comp_p" ]; then 
+    . "$HOME/$gcloud_comp_p"; 
 fi

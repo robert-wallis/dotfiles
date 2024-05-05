@@ -1,13 +1,14 @@
-printf "env folders:\n"
 
-obsidian="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Robert"
+obsidian_s="Library/Mobile Documents/iCloud~md~obsidian/Documents/Robert"
+obsidian="$HOME/$obsidian_s"
 if [ -d "$obsidian" -a -z "$OBSIDIAN" ]; then
     export OBSIDIAN="$obsidian"
-    printf "  \$OBSIDIAN         $OBSIDIAN\n"
+    printf " \$OBSIDIAN"
 fi
 
-gdrive="$HOME/Library/CloudStorage/GoogleDrive-smilingrob@gmail.com/My Drive"
+gdrive_s="Library/CloudStorage/GoogleDrive-smilingrob@gmail.com/My Drive"
+gdrive="$HOME/$gdrive_s"
 if [ -d "$gdrive" -a -z "$GDRIVE" ]; then
-   export GDRIVE="$gdrive"
-   printf "  \$GDRIVE           $GDRIVE\n"
+    export GDRIVE="$gdrive"
+    printf " \$GDRIVE"
 fi

@@ -1,7 +1,7 @@
-llvm_path=$(brew --prefix llvm)
+llvm_path=$(brew --prefix llvm@17)
 
 if [ -d "$llvm_path" ]; then
     llvm_bin="$llvm_path/bin"
     export PATH="$llvm_bin:$PATH"
-    printf "LLVM added to PATH  $llvm_bin\n"
+    printf " llvm@17"
 fi
