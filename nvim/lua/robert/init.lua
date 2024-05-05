@@ -9,3 +9,5 @@ vim.cmd("set expandtab")
 
 vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
+
+vim.cmd("tnoremap <Esc> <C-\\><C-n>")
