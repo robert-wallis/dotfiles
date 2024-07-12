@@ -1,6 +1,7 @@
 # Rust
-CARGO_HOME="$HOME/.cargo/bin"
-if [ -d $CARGO_HOME ]; then
-    export PATH="$PATH:$CARGO_HOME"
+cargo_home="$HOME/.cargo/bin"
+if [ -d $cargo_home ]; then
+    export PATH="$PATH:$cargo_home"
     printf " cargo"
 fi
+unset cargo_home

@@ -4,4 +4,4 @@ if [ -d $python_framework_bin ]; then
     export PATH="$PATH:$python_framework_bin"
     printf " python3.12"
 fi
-
+unset python_framework_bin

@@ -5,3 +5,5 @@ if [ -f $brew_command ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
     printf " brew"
 fi
+
+unset brew_command

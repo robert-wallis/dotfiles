@@ -13,3 +13,6 @@ if [ -d $ANDROID_NDK_HOME ]; then
     printf " NDK"
     export PATH="$PATH:$ANDROID_NDK_HOME"
 fi
+
+unset android_home_p
+unset android_ndk_p

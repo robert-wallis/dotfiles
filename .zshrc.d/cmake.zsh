@@ -1,5 +1,7 @@
-CMAKE_PATH="/Applications/CMake.app/Contents/bin"
-if [ -d $CMAKE_PATH ]; then
-    export PATH="$PATH:$CMAKE_PATH"
+cmake_path="/Applications/CMake.app/Contents/bin"
+if [ -d $cmake_path ]; then
+    export PATH="$PATH:$cmake_path"
     printf " cmake"
 fi
+
+unset cmake_path

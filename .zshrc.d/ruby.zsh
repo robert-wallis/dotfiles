@@ -1,8 +1,7 @@
 # Ruby
 
 # rvm
-rvm_bin_s=".rvm/bin"
-rvm_bin="$HOME/$rvm_bin_s"
+rvm_bin="$HOME/.rvm/bin"
 if [ -d $rvm_bin ]; then
     if [[ "$PATH" == *"$rvm_bin"* ]]; then
     else
@@ -10,10 +9,10 @@ if [ -d $rvm_bin ]; then
         export PATH="$PATH:$rvm_bin"
     fi
 fi
+unset rvm_bin
 
 # rbenv
-rbenv_bin_s=".rbenv/bin"
-rbenv_bin="$HOME/$rbenv_bin_s"
+rbenv_bin="$HOME/.rbenv/bin"
 if [ -d "$rbenv_bin" ]; then
     if [[ "$PATH" == *"$rbenv_bin"* ]]; then
     else
@@ -25,3 +24,4 @@ if which rbenv > /dev/null; then
     printf " \e[31meval rbenv\e[0m"
     eval "$(rbenv init - /bin/zsh)"
 fi
+unset rbenv_bin

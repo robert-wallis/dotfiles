@@ -1,14 +1,14 @@
 # Needed to use Gtk+ in Rust.
-LIBFFI_HOME="/usr/local/opt/libffi"
-LIBFFI_PKGCONFIG="$LIBFFI_HOME/lib/pkgconfig"
-if [ -d $LIBFFI_PKGCONFIG ]; then
-	if [[ "$PKG_CONFIG_PATH" == *"$LIBFFI_PKGCONFIG"* ]]; then
+libffi_path="/usr/local/opt/libffi/lib/pkgconfig"
+if [ -d $libffi_path ]; then
+	if [[ "$PKG_CONFIG_PATH" == *"$libffi_path"* ]]; then
 		printf " libffi"
 	elif [ -z "$PKG_CONFIG_PATH" ]; then
-		export PKG_CONFIG_PATH=$LIBFFI_PKGCONFIG
+		export PKG_CONFIG_PATH=$libffi_path
 		printf " libffi"
 	else
-		export PKG_CONFIG_PATH="$LIBFFI_PKGCONFIG:$PKG_CONFIG_PATH"
+		export PKG_CONFIG_PATH="$libffi_path:$PKG_CONFIG_PATH"
 		printf " libffi"
 	fi
 fi
+unset libffi_path
