@@ -8,6 +8,7 @@ ln -isv $DOTFILES/.vimrc $HOME/.vimrc
 ln -isv $DOTFILES/.gvimrc $HOME/.gvimrc
 ln -isv $DOTFILES/.hgrc $HOME/.hgrc
 ln -isv $DOTFILES/.tmux.conf $HOME/.tmux.conf
+ln -isv $DOTFILES/.sqliterc $HOME/.sqliterc
 # dirs use if because if you install twice, ln will put a folder in a folder
 if [ ! -s $HOME/.config/nvim ]; then
 	mkdir $HOME/.config
