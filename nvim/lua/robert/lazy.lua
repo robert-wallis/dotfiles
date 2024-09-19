@@ -15,6 +15,5 @@ require("lazy").setup({
 			'williamboman/mason-lspconfig.nvim',
 		}
 	}, -- language servers
-	'github/copilot.vim',
 })
 

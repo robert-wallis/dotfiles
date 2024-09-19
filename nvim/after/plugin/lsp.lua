@@ -13,7 +13,6 @@ require("mason-lspconfig").setup {
 		"gopls", -- go
 		"jedi_language_server", -- python
 		"lua_ls",
-		"tsserver", -- typescript
                 -- "rust_analyzer", DON'T install, mason uses an old one
 		"volar", -- vue
 		"yamlls",
