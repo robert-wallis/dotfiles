@@ -1,5 +1,2 @@
------ default init ----
--- set runtimepath^=~/.vim runtimepath+=~/.vim/after
--- let &packpath = &runtimepath
--- source ~/.vimrc
-require("robert")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
