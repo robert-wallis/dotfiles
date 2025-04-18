@@ -1,6 +1,3 @@
-[submodule "nvim/pack/lazy/start/lazy.nvim"]
-	path = nvim/pack/lazy/start/lazy.nvim
-	url = https://github.com/folke/lazy.nvim.git
 [submodule "nvim/pack/github/start/copilot.vim"]
 	path = nvim/pack/github/start/copilot.vim
 	url = https://github.com/github/copilot.vim.git
