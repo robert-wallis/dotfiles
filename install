@@ -4,8 +4,6 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 ln -isv $DOTFILES/.gitconfig $HOME/.gitconfig
 ln -isv $DOTFILES/.zshrc $HOME/.zshrc
-ln -isv $DOTFILES/.vimrc $HOME/.vimrc
-ln -isv $DOTFILES/.gvimrc $HOME/.gvimrc
 ln -isv $DOTFILES/.hgrc $HOME/.hgrc
 ln -isv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 ln -isv $DOTFILES/.sqliterc $HOME/.sqliterc
