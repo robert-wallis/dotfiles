@@ -1,3 +1,7 @@
 [user]
 	name = Robert Wallis
 	email = smilingrob@gmail.com
+[commit]
+  gpgsign = true
+[gpg]
+  format = ssh
