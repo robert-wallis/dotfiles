@@ -2,6 +2,7 @@
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export CLICOLOR=1
 export GPG_TTY=$(tty)
+export EDITOR="nvim"
 
 for cfg in $(ls $HOME/.zshrc.d/*); do
     [ -r $cfg ] && source $cfg
