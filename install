@@ -7,12 +7,15 @@ if [ ! -f $HOME/.gitconfig ]; then
 fi
 ln -isv $DOTFILES/.zshrc $HOME/.zshrc
 ln -isv $DOTFILES/.hgrc $HOME/.hgrc
-ln -isv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 ln -isv $DOTFILES/.sqliterc $HOME/.sqliterc
 # dirs use if because if you install twice, ln will put a folder in a folder
 if [ ! -s $HOME/.config/nvim ]; then
   mkdir $HOME/.config
   ln -isv "$DOTFILES/nvim" "$HOME/.config/nvim"
+fi
+if [ ! -s $HOME/.config/tmux ]; then
+  mkdir $HOME/.config
+  ln -isv "$DOTFILES/tmux" "$HOME/.config/tmux"
 fi
 if [ ! -s $HOME/.zshrc.d ]; then
   ln -isv $DOTFILES/.zshrc.d $HOME/.zshrc.d
