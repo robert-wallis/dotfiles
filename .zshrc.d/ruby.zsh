@@ -19,9 +19,9 @@ if [ -d "$rbenv_bin" ]; then
         printf " rbenv"
         export PATH="$PATH:$rbenv_bin"
     fi
-fi
-if which rbenv 2>/dev/null; then
-    printf " \e[31meval rbenv\e[0m"
-    eval "$(rbenv init - /bin/zsh)"
+    if [ ! -z "$(which rbenv 2>/dev/null)" ]; then
+        printf " \e[31meval rbenv\e[0m"
+        eval "$(rbenv init - /bin/zsh)"
+    fi
 fi
 unset rbenv_bin
