@@ -1,6 +1,15 @@
 return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    init = function()
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "copilot-*",
+        callback = function()
+          -- allow view of triple backticks
+          vim.opt_local.conceallevel = 0
+        end,
+      })
+    end,
     opts = {
       providers = {
         ollama = {
