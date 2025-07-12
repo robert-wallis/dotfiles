@@ -13,7 +13,6 @@ return {
     opts = {
       providers = {
         ollama = {
-          print("Loading ollama provider for CopilotChat.nvim"),
           prepare_input = require("CopilotChat.config.providers").copilot.prepare_input,
           prepare_output = require("CopilotChat.config.providers").copilot.prepare_output,
           get_models = function(headers)
