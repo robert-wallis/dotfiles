@@ -54,6 +54,13 @@ return {
           end,
         },
       },
+      prompts = {
+        Robert = {
+          system_prompt = "The OS is macOS. Running in neovim with LazyVim.",
+          description = "Custom simple prompt",
+        },
+      },
+      system_prompt = "Robert",
     },
   },
 }
