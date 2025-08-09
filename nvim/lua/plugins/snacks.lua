@@ -1,6 +1,7 @@
 local header = function()
   local hostname = string.lower(vim.uv.os_gethostname())
   if hostname == "mac.lan" or hostname == "rwm3m.lan" then
+    -- https://patorjk.com/software/taag/#p=display&c=lua&f=ANSI%20Shadow&t=RWM3M%0A
     return [[
 ██████╗ ██╗    ██╗███╗   ███╗██████╗ ███╗   ███╗
 ██╔══██╗██║    ██║████╗ ████║╚════██╗████╗ ████║
