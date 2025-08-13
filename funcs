@@ -1,28 +1,23 @@
 #!/bin/bash
 
-function dotenv () {
-  export $(cat .env)
-}
-
 function trcut() {
-	tr -s ' ' | cut -d ' ' "$@"
+  tr -s ' ' | cut -d ' ' "$@"
 }
 
 function killport() {
-    port=${@:$#}
-    if [ -z "$port" ]; then
-        echo "usage: killport [args for kill] <tcp port>"
-        echo "  kills whichever process is using the port"
-        echo "  useful because grunt keeps node running"
-        return 1
-    fi  
-    pid=$(lsof -t -i tcp:$port)
-    if [ -z "$pid" ]; then
-        echo "port $port not in use"
-        return 1
-    fi  
-    # get rid of last param
-    args=${@:1:$#-1}
-    kill $args $pid
+  port=${@:$#}
+  if [ -z "$port" ]; then
+    echo "usage: killport [args for kill] <tcp port>"
+    echo "  kills whichever process is using the port"
+    echo "  useful because grunt keeps node running"
+    return 1
+  fi
+  pid=$(lsof -t -i tcp:$port)
+  if [ -z "$pid" ]; then
+    echo "port $port not in use"
+    return 1
+  fi
+  # get rid of last param
+  args=${@:1:$#-1}
+  kill $args $pid
 }
-
