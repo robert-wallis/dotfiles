@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (C) 2025 Robert A. Wallis, All Rights Reserved.
 
 function trcut() {
   tr -s ' ' | cut -d ' ' "$@"
@@ -21,3 +22,41 @@ function killport() {
   args=${@:1:$#-1}
   kill $args $pid
 }
+
+# simple load of .env as exported variables
+function dotenv() {
+
+  if [ $# -gt 1 ]; then
+    echo "Usage: dotenv <file>"
+    echo "   or: dotenv"
+    echo "       to load the .env file"
+    return 1
+  fi
+
+  local file
+  if [ -f "$1" ]; then
+    file="$1"
+  else
+    file=".env"
+  fi
+
+  if [ ! -f "$file" ]; then
+    echo "File $file does not exist."
+    return 1
+  fi
+
+  echo "sourcing $file"
+
+  set -o allexport
+  # set IFS internal file spacing to blank to capture blank spaces
+  while IFS= read -r line; do
+    if [[ "$line" == *=* ]]; then
+      var_name="${line%%=*}"
+      var_val="${line#*=}"
+      echo "exporting $var_name"
+      export "$var_name"="$var_val"
+    fi
+  done <"$file"
+  set +o allexport
+}
+
