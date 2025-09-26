@@ -1,0 +1,9 @@
+#!/bin/env bash
+# mask the kacpid notify thing that is taking up all my CPU time
+# https://unix.stackexchange.com/a/734842/67188
+
+for F in $(awk '$4=="unmasked"&&$1>10000{print FILENAME}' /sys/firmware/acpi/interrupts/*); do
+  echo "masking ACPI interrupt $F"
+  sudo sh -c "echo mask > $F"
+done
+echo "done"
