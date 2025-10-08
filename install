@@ -1,29 +1,64 @@
 #!/bin/bash
+# install all these files into the user's home folder
+
+FORCE=0
+if [ "$1" = "-f" ]; then
+  FORCE=1
+fi
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-if [ ! -f $HOME/.gitconfig ]; then
-  cp $DOTFILES/.gitconfig $HOME/.gitconfig
+if [ ! "$XDG_CONFIG_HOME" ]; then
+  echo "\$XDG_CONFIG_HOME is not set, defaulting to ~/.config"
+  XDG_CONFIG_HOME="$HOME/.config"
 fi
-ln -isv $DOTFILES/.zshrc $HOME/.zshrc
-ln -isv $DOTFILES/.hgrc $HOME/.hgrc
-ln -isv $DOTFILES/.sqliterc $HOME/.sqliterc
-# dirs use if because if you install twice, ln will put a folder in a folder
-if [ ! -s $HOME/.config/nvim ]; then
-  mkdir -p $HOME/.config
-  ln -isv "$DOTFILES/nvim" "$HOME/.config/nvim"
-fi
-if [ ! -s $HOME/.config/tmux ]; then
-  mkdir -p $HOME/.config
-  ln -isv "$DOTFILES/tmux" "$HOME/.config/tmux"
-fi
-if [ ! -s $HOME/.zshrc.d ]; then
-  ln -isv $DOTFILES/.zshrc.d $HOME/.zshrc.d
-fi
-if [ ! -s $HOME/bin ]; then
-  ln -isv $DOTFILES/bin $HOME/bin
-fi
-if [ ! -s $HOME/.config/git/ignore ]; then
-  mkdir -p $HOME/.config/git
-  ln -isv $DOTFILES/gitignore $HOME/.config/git/ignore
-fi
+
+# if you simply `ln` twice, ln will put a folder in a folder
+# so this is a more complicated operation than just ln
+checked_link() {
+  local src="$1"
+  local dest="$2"
+  local parent=$(dirname "$dest")
+  # does it need to be installed?
+  if [ "$FORCE" -eq 1 ] && [ -L "$dest" ]; then
+    unlink "$dest"
+    mkdir -p "$parent"
+    ln -isv "$src" "$dest"
+  elif [ ! -s "$dest" ]; then
+    mkdir -p "$parent"
+    ln -isv "$src" "$dest"
+  else
+    echo "$dest already exists, skipping"
+  fi
+}
+
+# just copy, each computer is different
+copy_install() {
+  local src="$1"
+  local dest="$2"
+  # does it need to be installed?
+  if [ ! -f "$dest" -a ! -d "$dest" ]; then
+    # do we need to create the parent directory tree?
+    local parent=$(dirname "$dest")
+    if [ ! -d "$parent" ]; then
+      mkdir -p "$parent"
+    fi
+    if [ -f "$src" ]; then
+      cp "$src" "$dest"
+    else
+      cp -r "$src" "$dest"
+    fi
+  else
+    echo "$dest already exists, skipping"
+  fi
+}
+
+checked_link "$DOTFILES/bin" "$HOME/bin"
+checked_link "$DOTFILES/hypr" "$XDG_CONFIG_HOME/hypr"
+checked_link "$DOTFILES/gitignore" "$XDG_CONFIG_HOME/git/ignore"
+copy_install "$DOTFILES/gitconfig" "$XDG_CONFIG_HOME/git/config"
+checked_link "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
+checked_link "$DOTFILES/tmux" "$XDG_CONFIG_HOME/tmux"
+checked_link "$DOTFILES/sqliterc" "$XDG_CONFIG_HOME/sqlite3/sqliterc"
+checked_link "$DOTFILES/zshrc" "$HOME/.zshrc"
+checked_link "$DOTFILES/zshrc.d" "$HOME/.zshrc.d"
