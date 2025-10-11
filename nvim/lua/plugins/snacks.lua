@@ -9,6 +9,14 @@ local header = function()
 ██╔══██╗██║███╗██║██║╚██╔╝██║ ╚═══██╗██║╚██╔╝██║
 ██║  ██║╚███╔███╔╝██║ ╚═╝ ██║██████╔╝██║ ╚═╝ ██║
 ╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝     ╚═╝╚═════╝ ╚═╝     ╚═╝]]
+  elseif hostname == "pc" then
+    return [[
+██████╗  ██████╗
+██╔══██╗██╔════╝
+██████╔╝██║     
+██╔═══╝ ██║     
+██║     ╚██████╗
+╚═╝      ╚═════╝]]
   else
     return [[
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
@@ -18,6 +26,15 @@ local header = function()
 ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]]
   end
+end
+
+local is_a_git_repo = function()
+  if vim.fn.executable("git") ~= 1 then
+    return false
+  end
+  -- if we can get the current branch, we're in a git repo
+  local branch = vim.fn.system("git branch --show-current 2>/dev/null")
+  return vim.v.shell_error == 0 and branch ~= ""
 end
 
 return {
@@ -36,7 +53,8 @@ return {
             icon = " ",
             title = "git status",
             section = "terminal",
-            cmd = "git status --short --branch --renames",
+            enabled = is_a_git_repo(),
+            cmd = "type git >/dev/null 2>&1 && git status --short --branch --renames 2>/dev/null || true",
             height = 8,
             padding = 1,
             ttl = 5 * 60,
