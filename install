@@ -53,8 +53,11 @@ copy_install() {
   fi
 }
 
+is_linux() {
+  [[ "$OSTYPE" == "linux-gnu"* ]]
+}
+
 checked_link "$DOTFILES/bin" "$HOME/bin"
-checked_link "$DOTFILES/hypr" "$XDG_CONFIG_HOME/hypr"
 checked_link "$DOTFILES/gitignore" "$XDG_CONFIG_HOME/git/ignore"
 copy_install "$DOTFILES/gitconfig" "$XDG_CONFIG_HOME/git/config"
 checked_link "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
@@ -62,3 +65,7 @@ checked_link "$DOTFILES/tmux" "$XDG_CONFIG_HOME/tmux"
 checked_link "$DOTFILES/sqliterc" "$XDG_CONFIG_HOME/sqlite3/sqliterc"
 checked_link "$DOTFILES/zshrc" "$HOME/.zshrc"
 checked_link "$DOTFILES/zshrc.d" "$HOME/.zshrc.d"
+
+if is_linux; then
+  checked_link "$DOTFILES/hypr" "$XDG_CONFIG_HOME/hypr"
+fi
