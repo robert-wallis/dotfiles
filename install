@@ -60,6 +60,7 @@ is_linux() {
 checked_link "$DOTFILES/bin" "$HOME/bin"
 checked_link "$DOTFILES/gitignore" "$XDG_CONFIG_HOME/git/ignore"
 copy_install "$DOTFILES/gitconfig" "$XDG_CONFIG_HOME/git/config"
+checked_link "$DOTFILES/kitty/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 checked_link "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
 checked_link "$DOTFILES/tmux" "$XDG_CONFIG_HOME/tmux"
 checked_link "$DOTFILES/sqliterc" "$XDG_CONFIG_HOME/sqlite3/sqliterc"
