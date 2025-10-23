@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # install all these files into the user's home folder
 
 FORCE=0
@@ -61,6 +61,9 @@ checked_link "$DOTFILES/bin" "$HOME/bin"
 checked_link "$DOTFILES/gitignore" "$XDG_CONFIG_HOME/git/ignore"
 copy_install "$DOTFILES/gitconfig" "$XDG_CONFIG_HOME/git/config"
 checked_link "$DOTFILES/kitty/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
+if [[ $(uname -a) == *bazzite* ]]; then
+  checked_link "$DOTFILES/kitty/ublue.conf" "$XDG_CONFIG_HOME/kitty/ublue.conf"
+fi
 checked_link "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
 checked_link "$DOTFILES/tmux" "$XDG_CONFIG_HOME/tmux"
 checked_link "$DOTFILES/sqliterc" "$XDG_CONFIG_HOME/sqlite3/sqliterc"
