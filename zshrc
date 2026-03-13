@@ -25,5 +25,4 @@ autoload -Uz compinit && compinit
 newline=$'\n'
 PROMPT="%(?..⏎ %F{red}%?%f${newline})%F{reset}%n@%m %2~%f \$vcs_info_msg_0_\$vcs_info_msg_1_ %# "
 
-alias ll="ls -la"
-
+alias ll="ls -lah"
