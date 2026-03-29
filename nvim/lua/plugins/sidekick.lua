@@ -87,7 +87,14 @@ return {
     },
     -- bindings for specific brands
     {
-      "<leader>ac",
+      "<leader>acl",
+      function()
+        require("sidekick.cli").toggle({ name = "claude", focus = true })
+      end,
+      desc = "Sidekick Toggle Claude",
+    },
+    {
+      "<leader>aco",
       function()
         require("sidekick.cli").toggle({ name = "copilot", focus = true })
       end,
