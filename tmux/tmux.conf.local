@@ -389,6 +389,10 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # start with mouse mode enabled
 set -g mouse on
 
+# enable extended keys for Shift+Enter support in Claude Code
+set -g extended-keys always
+set -as terminal-features 'xterm*:extkeys'
+
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 #set -g status-keys vi
