@@ -23,7 +23,12 @@ config.color_scheme = "Belge (terminal.sexy)"
 config.window_background_opacity = 0.8
 config.win32_system_backdrop = "Acrylic"
 
-config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/zsh", "-l" }
+local homebrew_zsh = "/home/linuxbrew/.linuxbrew/bin/zsh"
+local f = io.open(homebrew_zsh, "r")
+if f then
+  f:close()
+  config.default_prog = { homebrew_zsh, "-l" }
+end
 
 -- Finally, return the configuration to wezterm:
 return config
