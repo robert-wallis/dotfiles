@@ -67,6 +67,7 @@ fi
 checked_link "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
 checked_link "$DOTFILES/tmux" "$XDG_CONFIG_HOME/tmux"
 checked_link "$DOTFILES/sqliterc" "$XDG_CONFIG_HOME/sqlite3/sqliterc"
+checked_link "$DOTFILES/wezterm" "$XDG_CONFIG_HOME/wezterm"
 checked_link "$DOTFILES/zshrc" "$HOME/.zshrc"
 checked_link "$DOTFILES/zshrc.d" "$HOME/.zshrc.d"
 
