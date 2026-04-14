@@ -25,6 +25,8 @@ config.color_scheme = "Belge (terminal.sexy)"
 config.window_background_opacity = is_macos and 0.95 or 0.8
 config.win32_system_backdrop = "Acrylic"
 
+config.hide_tab_bar_if_only_one_tab = true
+
 local homebrew_zsh = "/home/linuxbrew/.linuxbrew/bin/zsh"
 local f = io.open(homebrew_zsh, "r")
 if f then
