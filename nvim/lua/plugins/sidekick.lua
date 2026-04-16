@@ -87,25 +87,32 @@ return {
     },
     -- bindings for specific brands
     {
-      "<leader>acl",
+      "<leader>au",
       function()
         require("sidekick.cli").toggle({ name = "claude", focus = true })
       end,
-      desc = "Sidekick Toggle Claude",
+      desc = "Sidekick Claude",
     },
     {
-      "<leader>aco",
+      "<leader>ao",
+      function()
+        require("sidekick.cli").toggle({ name = "opencode", focus = true })
+      end,
+      desc = "Sidekick Opencode",
+    },
+    {
+      "<leader>ap",
       function()
         require("sidekick.cli").toggle({ name = "copilot", focus = true })
       end,
-      desc = "Sidekick Toggle Copilot",
+      desc = "Sidekick Copilot",
     },
     {
       "<leader>ag",
       function()
         require("sidekick.cli").toggle({ name = "gemini", focus = true })
       end,
-      desc = "Sidekick Toggle Gemini",
+      desc = "Sidekick Gemini",
     },
   },
 }
